@@ -31,7 +31,10 @@
 
 
 <h1>
-  <a href="" class="typewrite" data-period="2000" data-type='[ "Hi, Im Emmanuel.", "I am a UI/UX Devleloper who loves creating stuff.", "I Love Design And Innovation.", "And One day Hope To Begin My Own StartUp." ,"I Code In A Variety Of Languages Across Various Fields In Development."]'>
+  <a href="" class="typewrite" data-period="2000" data-type='[ "👋🏼, Im Emmanuel.🕶",
+							     "I am a UI/UX devleloper👨‍🏭 who loves creating Stuff.🧎🏼",
+							     "I love design 👨🏼‍🎨 and Innovation.🤖", "One day hope to found my StartUp.🙂🌈  " ,
+							     "I code ⌨️ 🌊 in a variety of languages {🧈, 🥞 , 🧇 , 🥓 , 🥩 ,🍗 ,🍖 ,🦴} across various fields of Software Development. 👻"]'>
     <span class="wrap"></span>
   </a>
 </h1>
@@ -100,8 +103,8 @@
 	<script>
 	// set up text to print, each item in array is new line
 var aText = new Array(
-"I have knowlege across various development practices cross plattform.", 
-"Js (Es6) ,",
+	" I have knowlege across various development practices cross plattform.", 
+	"JS (Es6) ,",
 	"NodeJS And Express,",
 	"PHP,",
 	"Python,",
@@ -111,10 +114,12 @@ var aText = new Array(
 	"Kotlin,",
 	"SQL",
 	"React,",
+	"EmojiCode🤔 (Yes,It is a Language.🤓 )"
 	"and able to use their respective libraries, modules, packages,etc. ",
-	"I also use Version Control and have experience In Project Management and Development."
+	"I also use Version control and have experience In Project Management and Development.",
+	" 🇳🇬 ",
 );
-var iSpeed = 20000; // time delay of print out
+var iSpeed = 10000; // time delay of print out
 var iIndex = 0; // start printing array at this posision
 var iArrLength = aText[0].length; // the length of the text array
 var iScrollAt = 30; // start scrolling up at this many lines
@@ -141,7 +146,7 @@ function typewriter()
    setTimeout("typewriter()", 500);
   }
  } else {
-  setInterval("typewriter()", iSpeed);
+  setTimeout("typewriter()", iSpeed);
  }
 }
 
