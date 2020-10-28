@@ -12,9 +12,13 @@
 		}
 
 		body {
-			background-color: azure;
-		}
+  background-color:#ce3635;
+  text-align: center;
+  color:#fff;
+  padding-top:10em;
+}
 
+* { color:#fff; text-decoration: none;}
 		@media screen and (min-width: 600px) {
 			body {
 				background-color: darkcyan;
@@ -44,12 +48,16 @@
 	</header>
 	<section id="Up" style="margin: 20px;background-color: skyblue;">
 		<hr>
-		<div
-			style="margin:54px;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;padding: 29px;color: #201c1c;background-color: azure;margin: 63px;">
-			<p style="line-height: 30px;">My name is Emmanuel.<br>I am a UI/UX Engineer. <br>I build fast and responsive webpages and web apps in a variety of languages and frameworks. 
-				
-				 </p>
-		</div>
+		
+
+
+<h1>
+  <a href="" class="typewrite" data-period="2000" data-type='[ "Hi, I\'m Emmanuel.", "I am a UI/UX Engineer.", "I Love Design and Development.", "And Boy Do I Take It Seriously." ]'>
+    <span class="wrap"></span>
+  </a>
+</h1>
+
+
 		<a href="#Regedit"><svg
 				style="border:1px solid #1fbbbb;box-sizing:border-box;width:50px;margin-left:5px;background-color:#625e43d9;"
 				width="150" height="100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 32">
@@ -650,7 +658,62 @@
 
 
 
+<script> var TxtType = function(el, toRotate, period) {
+        this.toRotate = toRotate;
+        this.el = el;
+        this.loopNum = 0;
+        this.period = parseInt(period, 10) || 2000;
+        this.txt = '';
+        this.tick();
+        this.isDeleting = false;
+    };
 
+    TxtType.prototype.tick = function() {
+        var i = this.loopNum % this.toRotate.length;
+        var fullTxt = this.toRotate[i];
+
+        if (this.isDeleting) {
+        this.txt = fullTxt.substring(0, this.txt.length - 1);
+        } else {
+        this.txt = fullTxt.substring(0, this.txt.length + 1);
+        }
+
+        this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
+
+        var that = this;
+        var delta = 200 - Math.random() * 100;
+
+        if (this.isDeleting) { delta /= 2; }
+
+        if (!this.isDeleting && this.txt === fullTxt) {
+        delta = this.period;
+        this.isDeleting = true;
+        } else if (this.isDeleting && this.txt === '') {
+        this.isDeleting = false;
+        this.loopNum++;
+        delta = 500;
+        }
+
+        setTimeout(function() {
+        that.tick();
+        }, delta);
+    };
+
+    window.onload = function() {
+        var elements = document.getElementsByClassName('typewrite');
+        for (var i=0; i<elements.length; i++) {
+            var toRotate = elements[i].getAttribute('data-type');
+            var period = elements[i].getAttribute('data-period');
+            if (toRotate) {
+              new TxtType(elements[i], JSON.parse(toRotate), period);
+            }
+        }
+        // INJECT CSS
+        var css = document.createElement("style");
+        css.type = "text/css";
+        css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
+        document.body.appendChild(css);
+    };</script>
 
 
 
