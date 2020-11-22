@@ -1,173 +1,82 @@
 <!DOCTYPE html>
-<html>
-
+<html >
 <head>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tailwind Css test</title>
+    <link rel="stylesheet" href="styles.css">
 
-	<title>Regedit</title>
-	<style>
-		body {
- 	 background-color:#ce3635;;
- 	 text-align: center;
-  	 color:#fff;
-  	 padding-top:10em;
-}
-		#text {
-  	  font-family: 'Waiting for the Sunrise', cursive; 
- 	  font-size:30px; 
- 	  margin: 10px 50px; 
-	  letter-spacing: 6px; 
-	  font-weight: bold;
-	  margin-top: 50px;
-}
-
-* { color:#fff; text-decoration: none;}
-	</style>
 </head>
-<body>
-
-
-
-
-
-<h1>
-  <a href="/" class="typewrite" data-period="2000" data-type='[ "👋🏼, Im Emmanuel.🕶",
-							     "I am a UI/UX devleloper👨‍🏭 who loves creating Stuff.🧎🏼",
-							     "I love design 👨🏼‍🎨 and Innovation.🤖", "One day hope to found my StartUp.🙂🌈  " ,
-							     "I code ⌨️ 🌊 in a variety of languages {🧈, 🥞 , 🧇 , 🥓 , 🥩 ,🍗 ,🍖 ,🦴} across various fields of Software Development. 👻"]'>
-    <span class="wrap"></span>
-  </a>
-</h1>
-
-	
-	<div id="text"> <div id="typedtext"></div></div>
-
-<script>
-
-
-var TxtType = function(el, toRotate, period) {
-        this.toRotate = toRotate;
-        this.el = el;
-        this.loopNum = 0;
-        this.period = parseInt(period, 10) || 2000;
-        this.txt = '';
-        this.tick();
-        this.isDeleting = false;
-    };
-
-    TxtType.prototype.tick = function() {
-        var i = this.loopNum % this.toRotate.length;
-        var fullTxt = this.toRotate[i];
-
-        if (this.isDeleting) {
-        this.txt = fullTxt.substring(0, this.txt.length - 1);
-        } else {
-        this.txt = fullTxt.substring(0, this.txt.length + 1);
-        }
-
-        this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
-
-        var that = this;
-        var delta = 200 - Math.random() * 100;
-
-        if (this.isDeleting) { delta /= 2; }
-
-        if (!this.isDeleting && this.txt === fullTxt) {
-        delta = this.period;
-        this.isDeleting = true;
-        } else if (this.isDeleting && this.txt === '') {
-        this.isDeleting = false;
-        this.loopNum++;
-        delta = 500;
-        }
-
-        setTimeout(function() {
-        that.tick();
-        }, delta);
-    };
-
-    window.onload = function() {
-        var elements = document.getElementsByClassName('typewrite');
-        for (var i=0; i<elements.length; i++) {
-            var toRotate = elements[i].getAttribute('data-type');
-            var period = elements[i].getAttribute('data-period');
-            if (toRotate) {
-              new TxtType(elements[i], JSON.parse(toRotate), period);
-            }
-        }
-        // INJECT CSS
-        var css = document.createElement("style");
-        css.type = "text/css";
-        css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
-        document.body.appendChild(css);
-    };
-
-	
-</script>
-<script>
-// set up text to print, each item in array is new line
-var aText = new Array(
-"I have knowledge across various development practices cross plattform.", 
-	"JS (Es6),",
-	"NodeJS And Express,",
-	"PHP,",
-	"Python,",
-	"C++,",
-	"C#,",
-	"Dart (Flutter)",
-	"Kotlin,",
-	"SQL",
-	"React,",
-	"EmojiCode🤔 (Yes,It is a Language.🤓 )",
-	"and able to use their respective libraries, modules, packages,etc.",
-	"I also use Version control and have experience In Project Management and Development.",
-	" 🇳🇬 ",
-);
-var iSpeed = 10; // time delay of print out
-var iIndex = 0; // start printing array at this posision
-var iArrLength = aText[0].length; // the length of the text array
-var iScrollAt = 20; // start scrolling up at this many lines
+<body class="bg-gray-200">
+  <div class="p-6 shadow-xl flex m-3 text-2xl bg-fixed  bg-green-100 head"><span class="text-black">Hi There 👋.</span> </div>
+  <div class="text-xl font-mono p-6 white"> <span class="text-blue-600"> Welcome</span> to <span class="text-yellow-600"> Ayo's 😎 </span> test of Tailwind Css <span class="text-xl text-blue-500">:P</span></div>
+  <div class="text-xl font-mono p-6">
+      <div class="black">
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis cumque maiores voluptatibus vitae, nostrum sint maxime quis et facere ea nobis distinctio, rem id nesciunt reprehenderit ipsam, inventore dolores labore!
+      </div>
+      <div class="text-blue-600 p-4">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet saepe corrupti quibusdam aliquid optio ad quis odio magni esse et ex unde ipsum molestias provident eos minima, quo ratione voluptas?
+      </div>
+      <div class="py-4 text-yellow-900 woah">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi id in maxime. Error quasi necessitatibus quibusdam perspiciatis sequi animi aliquid harum, eum esse, modi delectus, commodi suscipit culpa amet velit.
+      </div>
+      <div class="py-4 text-red-400">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cum, aperiam. Sit officiis est, praesentium omnis ex, quibusdam, quam temporibus non placeat obcaecati perferendis esse recusandae dolor voluptates enim laborum laboriosam.Ratione quasi suscipit neque unde! Velit molestiae commodi iste dolores nostrum voluptas blanditiis ab, quisquam cumque officia. Odit, recusandae error eveniet enim veritatis fugit nesciunt suscipit dolore vitae hic nemo.
+      </div>
+      <button class="text-yellow-900 me" > Dark Theme</button>
+      <button class="light text-yellow-500" style="display: none;"> Light Theme</button>
+  </div>
+  
+  <script>
+     window.addEventListener('beforeunload', function (e) {
+  // Cancel the event 
+  e.preventDefault(); // If you prevent default behavior in Mozilla Firefox prompt will always be shown
+  // Chrome requires returnValue to be set
  
-var iTextPos = 0; // initialise text position
-var sContents = ''; // initialise contents variable
-var iRow; // initialise current row
+  e.returnValue = '';
+});
+      const button = document.querySelector('.me')
+      const white = document.querySelector('.white')
+      const body = document.querySelector('body')
+      const black = document.querySelector('.black')
+      const head = document.querySelector('.head')
+      const light = document.querySelector('.light')
+      const woah = document.querySelector('.woah')
+    
+button.addEventListener('click' ,() => {
+    body.classList.remove('bg-gray-200')
+    head.classList.remove('bg-green-100')
+    head.classList.add('bg-red-400')
+    woah.classList.remove('text-yellow-900')
+    woah.classList.add('text-green-300')
+    white.classList.add('text-white')
+    black.classList.add('text-white')
+   body.classList.add('bg-black')
+   button.style.display = "none"
+    light.style.display = "block"
+   
+    
+   
+})
+
+light.addEventListener('click' , () => {
+    body.classList.add('bg-gray-200')
+    head.classList.add('bg-green-100')
+    head.classList.remove('bg-red-400')
+    white.classList.remove('text-white')
+    woah.classList.add('text-yellow-900')
+    woah.classList.remove('text-green-300')
+    black.classList.remove('text-white')
+   body.classList.remove('bg-black')
+   button.style.display = "block"
+    light.style.display = "none"
  
-function typewriter()
-{
- sContents =  ' ';
- iRow = Math.max(0, iIndex-iScrollAt);
- var destination = document.getElementById("typedtext");
- 
- while ( iRow < iIndex ) {
-  sContents += aText[iRow++] + '<br />';
- }
- destination.innerHTML = sContents + aText[iIndex].substring(0, iTextPos) + "_";
- if ( iTextPos++ == iArrLength ) {
-  iTextPos = 0;
-  iIndex++;
-  if ( iIndex != aText.length ) {
-   iArrLength = aText[iIndex].length;
-   setTimeout("typewriter()", 500);
-  }
- } else {
-  setTimeout("typewriter()", iSpeed);
- }
-}
 
 
-typewriter();
-
-
-	</script>
+})
 
 
 
-
-
-
-
-
-
+  </script>
 </body>
-
 </html>
